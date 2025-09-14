@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별까지의 거리와 시차 - 천문학 시뮬레이션</title>
+    <link rel="stylesheet" href="parallax-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌟 별까지의 거리와 시차</h1>
+            <p>천문학적 거리 측정의 기본 원리를 배워보세요</p>
+        </header>
+
+        <div class="main-content">
+            <div class="theory-section">
+                <h2>📚 시차란 무엇인가?</h2>
+                <div class="theory-card">
+                    <p>
+                        <strong>시차(Parallax)</strong>는 관찰자의 위치가 변할 때 멀리 있는 물체의 겉보기 위치가
+                        배경에 대해 변하는 현象입니다. 별까지의 거리를 측정하는 가장 기본적이고 정확한 방법입니다.
+                    </p>
+
+                    <div class="formula-box">
+                        <h3>거리 계산 공식</h3>
+                        <div class="formula">
+                            d (파섹) = 1 / p (각초)
+                        </div>
+                        <div class="formula-explanation">
+                            <p><strong>d</strong>: 별까지의 거리 (파섹)</p>
+                            <p><strong>p</strong>: 시차각 (각초)</p>
+                            <p><strong>1 파섹</strong> = 3.26 광년 = 3.09 × 10¹³ km</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulation-section">
+                <h2>🎯 시차 시뮬레이션</h2>
+                <div class="simulation-container">
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="distance-slider">별까지의 거리 (파섹):</label>
+                            <input type="range" id="distance-slider" min="1" max="100" value="10" step="1">
+                            <span id="distance-value">10</span> 파섹
+                        </div>
+
+                        <div class="control-group">
+                            <label for="earth-position">지구 위치:</label>
+                            <input type="range" id="earth-position" min="0" max="360" value="0" step="1">
+                            <span id="position-value">0</span>°
+                        </div>
+
+                        <button id="animate-btn" class="btn primary">궤도 애니메이션 시작</button>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="parallax-canvas" width="800" height="500"></canvas>
+                        <div class="canvas-info">
+                            <div class="info-item">
+                                <span class="label">현재 시차각:</span>
+                                <span id="parallax-angle" class="value">0.100</span> 각초
+                            </div>
+                            <div class="info-item">
+                                <span class="label">계산된 거리:</span>
+                                <span id="calculated-distance" class="value">10.0</span> 파섹
+                            </div>
+                            <div class="info-item">
+                                <span class="label">광년 단위:</span>
+                                <span id="distance-ly" class="value">32.6</span> 광년
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <h2>⭐ 실제 별의 예시</h2>
+                <div class="star-examples">
+                    <div class="star-card" data-distance="1.34" data-parallax="0.747">
+                        <h3>프록시마 센타우리</h3>
+                        <p>가장 가까운 별</p>
+                        <div class="star-data">
+                            <span>거리: 1.34 파섹 (4.37 광년)</span>
+                            <span>시차: 0.747 각초</span>
+                        </div>
+                    </div>
+
+                    <div class="star-card" data-distance="2.64" data-parallax="0.379">
+                        <h3>울프 359</h3>
+                        <p>적색왜성</p>
+                        <div class="star-data">
+                            <span>거리: 2.64 파섹 (8.6 광년)</span>
+                            <span>시차: 0.379 각초</span>
+                        </div>
+                    </div>
+
+                    <div class="star-card" data-distance="3.5" data-parallax="0.286">
+                        <h3>바나드별</h3>
+                        <p>고유운동이 큰 별</p>
+                        <div class="star-data">
+                            <span>거리: 3.5 파섹 (11.4 광년)</span>
+                            <span>시차: 0.286 각초</span>
+                        </div>
+                    </div>
+
+                    <div class="star-card" data-distance="8.6" data-parallax="0.116">
+                        <h3>시리우스</h3>
+                        <p>가장 밝은 별</p>
+                        <div class="star-data">
+                            <span>거리: 8.6 파섹 (28 광년)</span>
+                            <span>시차: 0.116 각초</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h2>🎓 학습 포인트</h2>
+                <div class="learning-cards">
+                    <div class="learning-card">
+                        <h3>시차의 원리</h3>
+                        <ul>
+                            <li>지구가 태양 주위를 공전하면서 관측 위치가 변함</li>
+                            <li>6개월 간격으로 관측하면 최대 시차각을 측정</li>
+                            <li>별이 가까울수록 시차각이 큼</li>
+                        </ul>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>측정의 한계</h3>
+                        <ul>
+                            <li>매우 작은 각도를 정밀하게 측정해야 함</li>
+                            <li>대기의 흔들림과 망원경의 한계</li>
+                            <li>약 1000파섹까지만 정확한 측정 가능</li>
+                        </ul>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>단위 이해</h3>
+                        <ul>
+                            <li>1 각초 = 1/3600 도</li>
+                            <li>1 파섹 = 1 각초 시차를 갖는 별의 거리</li>
+                            <li>천문단위(AU)는 지구-태양 거리</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h2>🤔 퀴즈로 확인하기</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <p>어떤 별의 시차각이 0.5 각초라면, 이 별까지의 거리는?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-answer="correct">2 파섹</button>
+                            <button class="quiz-option" data-answer="wrong">0.5 파섹</button>
+                            <button class="quiz-option" data-answer="wrong">5 파섹</button>
+                            <button class="quiz-option" data-answer="wrong">1 파섹</button>
+                        </div>
+                        <div id="quiz-feedback" class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="parallax-script.js"></script>
+</body>
+</html>
